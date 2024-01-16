@@ -4,12 +4,14 @@ import { Logger, ValidationPipe, VersioningType } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { configureSwaggerDocs } from './helpers/configure-swagger-docs.helper';
 import cookieParser = require('cookie-parser');
+import helmet from 'helmet';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get<ConfigService>(ConfigService);
 
   app.setGlobalPrefix('api');
+  app.use(helmet());
   app.use(cookieParser());
   app.useGlobalPipes(
     new ValidationPipe({

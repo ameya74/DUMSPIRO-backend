@@ -12,6 +12,7 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 import { MongoDbModule } from './_common/database/MongoConnection.module';
 import { PostgresConnectionModule } from './_common/database/postgresConnection.module';
 import { ThrottlerModule } from '@nestjs/throttler';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
     }),
     MongoDbModule,
     PostgresConnectionModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

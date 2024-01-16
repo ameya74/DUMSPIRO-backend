@@ -39,6 +39,7 @@
     "express-basic-auth": "^1.2.1",
     "handlebars": "^4.7.8",
     "hbs": "^4.2.0",
+    "helmet": "^7.1.0",
     "mysql2": "^3.6.3",
     "nodemailer": "^6.9.7",
     "pg": "^8.11.3",
